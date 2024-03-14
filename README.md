@@ -250,7 +250,7 @@ and obtaining the value of $A_{d,n}$, we are able to minimise the error $\frac{1
 $x \in \real^{d*1}, b \in \real^{n*1}$ where b is the image products between the picked image and the images in A. We also need to ensure that $x^tx = 1$ as the image product of an image with itself should be 1.
 
 **The problem statement**
-$$min\  \frac{1}{2}||A^tx-b||^2_2,  \ x^tx = 1$$
+$$min  \frac{1}{2}||A^tx-b||^2_2,   x^tx = 1$$
 
 ### Using Lagrange Multipliers 
 
@@ -263,15 +263,15 @@ $$AA^t = \sqrt{D}P^t(\sqrt{D}P^t)^t=\sqrt{D}P^tP\sqrt{D} = \sqrt{D}I\sqrt{D} = D
 
 From (1), $0 = AA^tx - Ab + \lambda x$
 $$(AA^t + \lambda I)x = Ab
-\ (D + \lambda I)x = Ab
-\x = (D + \lambda I)^{-1}Ab$$
+(D + \lambda I)x = Ab
+x = (D + \lambda I)^{-1}Ab$$
 
 From (2), $$1 = x^tx = [(D + \lambda I)^{-1}Ab]^t[(D + \lambda I)^{-1}Ab] \qquad \ \ \ 
-\= b^tA^t(D + \lambda I)^{-1}(D + \lambda I)^{-1}Ab
-\=  b^tA^t(D + \lambda I)^{-2}Ab \qquad \qquad \ \ \ 
-\= y^t(D + \lambda I)^{-2}y \qquad(y = Ab) \ \ 
-\ \implies
-\ 1 = \sum_{i=1}^{n} \left(\frac{y_i}{D_{i,i}+\lambda} \right)^2
+= b^tA^t(D + \lambda I)^{-1}(D + \lambda I)^{-1}Ab
+=  b^tA^t(D + \lambda I)^{-2}Ab \qquad \qquad \ \ \ 
+= y^t(D + \lambda I)^{-2}y \qquad(y = Ab) \ \ 
+ \implies
+ 1 = \sum_{i=1}^{n} \left(\frac{y_i}{D_{i,i}+\lambda} \right)^2
 $$
 
 We will thereafter solve for the lagrangian multipliers using numerical methods provided by scipy, and find the x that minimises $\frac{1}{2}||Ax-b||^2_2$. 
