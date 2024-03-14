@@ -255,23 +255,23 @@ $$min\  \frac{1}{2}||A^tx-b||^2_2,  \ x^tx = 1$$
 ### Using Lagrange Multipliers 
 
 $$\mathcal{L}(x,\lambda) = \frac{1}{2}||A^tx-b||^2_2 + \frac{1}{2}\lambda(||x||^2_2-1)
-\\0=\nabla\mathcal{L}(x,\lambda)=A(A^tx-b)+\lambda(x)  \qquad (1) 
-\\x^tx=1 \qquad (2)$$
+\0=\nabla\mathcal{L}(x,\lambda)=A(A^tx-b)+\lambda(x)  \qquad (1) 
+\x^tx=1 \qquad (2)$$
 
 From above, $A = \sqrt{D}P^t$
 $$AA^t = \sqrt{D}P^t(\sqrt{D}P^t)^t=\sqrt{D}P^tP\sqrt{D} = \sqrt{D}I\sqrt{D} = D$$
 
 From (1), $0 = AA^tx - Ab + \lambda x$
 $$(AA^t + \lambda I)x = Ab
-\\ (D + \lambda I)x = Ab
-\\x = (D + \lambda I)^{-1}Ab$$
+\ (D + \lambda I)x = Ab
+\x = (D + \lambda I)^{-1}Ab$$
 
 From (2), $$1 = x^tx = [(D + \lambda I)^{-1}Ab]^t[(D + \lambda I)^{-1}Ab] \qquad \ \ \ 
-\\= b^tA^t(D + \lambda I)^{-1}(D + \lambda I)^{-1}Ab
-\\=  b^tA^t(D + \lambda I)^{-2}Ab \qquad \qquad \ \ \ 
-\\= y^t(D + \lambda I)^{-2}y \qquad(y = Ab) \ \ 
-\\ \implies
-\\ 1 = \sum_{i=1}^{n} \left(\frac{y_i}{D_{i,i}+\lambda} \right)^2
+\= b^tA^t(D + \lambda I)^{-1}(D + \lambda I)^{-1}Ab
+\=  b^tA^t(D + \lambda I)^{-2}Ab \qquad \qquad \ \ \ 
+\= y^t(D + \lambda I)^{-2}y \qquad(y = Ab) \ \ 
+\ \implies
+\ 1 = \sum_{i=1}^{n} \left(\frac{y_i}{D_{i,i}+\lambda} \right)^2
 $$
 
 We will thereafter solve for the lagrangian multipliers using numerical methods provided by scipy, and find the x that minimises $\frac{1}{2}||Ax-b||^2_2$. 
